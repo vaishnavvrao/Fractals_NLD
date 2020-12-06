@@ -1,0 +1,17 @@
+subsection{Theoretical continuum model}
+We consider a continuum model for snow crystal growth, which consists of an ice crystal growing from water vapour, and non-dimensionalize it. 
+If c is the water vapour density in gas then, in $\Omega^+(t)$, the domain occupied by the gas phase, the diffusion equation gives $c_t - D \Delta c = 0$, where D is the diffusion constant. \\
+The mass balance at the gas/solid interface $\Gamma(t)$ gives rise to $D\frac{\partial c}{\partial \Vec{v}}  = (c_{solid}-c)\mathcal{V}$, where $c_{solid}$ is the number density of ice, $\Vec{v}$ is the unit normal to the interface, and $\mathcal{V}$ is the velocity of the interface in direction of $\Vec{v}$. \\
+Furthermore, taking surface tension effects and attachment kinetics into account, we require, $c = c_{sat}(1-\delta\kappa_{\gamma}+\frac{\mathcal{V}}{\beta(\Vec{v})v_{kin}})$
+Here $v_{kin}$ is the kinetic velocity, $\delta = \frac{\gamma^\circ}{(c_{solid} K T)}$ where $\gamma^\circ$ represents the surface tension of ice, K is the Boltzmann
+constant, T is the temperature and $c_{sat}$ is the equilibrium number density above a flat ice surface, which is dependent on temperature. In addition, $\kappa_{\gamma}$ is the anisotropic mean
+curvature which incorporates the hexagonal anisotropy of the surface energy density. Finally $\beta$ is the condensation coefficient, which depend on the orientation of the crystal. \\
+Finally, we complement these with the boundary condition $c = c_{\infty}$ on $\partial\Omega = \partial\Omega^+ \backslash \Gamma(t)$ where $c_{\infty} := c_{sat} + c{super}$ describes the water vapour number density far away from the interface. $c_{super}$ is related to the supersaturation of air. \\
+We now non-dimensionalize the problem, by choosing a time scale $t = \frac{R^2c_{solid}}{Dc_{sat}}$, R is a constant, and using $u = \frac{c-c_{sat}}{c_{sat}}$, we get the final equations as - 
+\begin{align}
+    \frac{c_{sat}}{c_{solid}}\partial_t u - \Delta u &= 0 \quad in \quad \Omega^+(t) \\
+    \frac{\partial u }{\partial \Vec{v}} &= \mathcal{V} \quad on \quad \Gamma(t)\\
+    \frac{Dc_{sat}\mathcal{V}}{Rc_{solid}v_{kin}\beta(\Vec{v})} &=\frac{\delta\kappa_{\gamma}}{R} + u \quad on \quad \Gamma(t)\\
+    u &= \frac{c_{super}}{c_{sat}} \quad on \quad \partial\Omega
+    \end{align}
+These are quite difficult to numerically compute, and hence, in the paper we saw an easier model to numerically compute and some results from these computations. 
